@@ -1,10 +1,16 @@
+{% set main_nav = [
+  { title: 'Home', link: '/' },
+  getPosts({ id: 'docs' })[0],
+  { title: 'Tutorials', link: 'https://www.getchisel.co/tutorials/' }
+] %}
+
 {% if main_nav %}
   <nav class="o-wrapper o-wrapper--small u-sp-top u-sp--large">
     <div class="c-sep u-sp-bottom u-sp--large"></div>
     <ul class="c-main-nav">
-      {% for item in main_nav.items %}
-        <li class="{{item.classes | join(' ')}} c-main-nav__item">
-          <a href="{{item.link}}" class="c-main-nav__link">{{item.title}}</a>
+      {% for item in main_nav %}
+        <li class="c-main-nav__item">
+          <a href="{{ item.link }}" class="c-main-nav__link">{{ item.title }}</a>
         </li>
       {% endfor %}
         <li class="c-main-nav__item">

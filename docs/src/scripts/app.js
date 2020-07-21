@@ -3,4 +3,6 @@
   Author: Xfive
  */
 
-// TODO: prism
+import 'prismjs';
+import 'prismjs/components/prism-php';
+import 'prismjs/components/prism-twig';

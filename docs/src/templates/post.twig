@@ -1,6 +1,8 @@
 {% extends "layouts/base.twig" %}
 {% block content %}
 
+  {% set sidebar = sidebar() %}
+
   <div class="u-sp-top u-sp--xlarge o-layout">
 
     {% if sidebar is not empty %}
