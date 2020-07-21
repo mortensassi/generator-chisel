@@ -13,8 +13,8 @@ Gulp tasks configuration. You can customize development workflow here, but usual
 **This is where you do front-end development**. The project source files are organized in the following subfolders:
 
 - `assets` - static asset files (images, fonts, etc.) - everything from this folder will be copied to the `dist` folder
-- `scripts` - JavaScript files, check out [JavaScript documentation](/docs/development/javascript/)
-- `styles` - Sass files with ITCSS structure, check out [ITCSS documentation](/docs/development/itcss/)
+- `scripts` - JavaScript files, check out [JavaScript documentation](/docs/development/javascript)
+- `styles` - Sass files with ITCSS structure, check out [ITCSS documentation](/docs/development/itcss)
 
 ### Moving `src` folder to the theme folder
 It's possible to have the `src` folder in your theme folder, just choose this option when setting up the project. If you haven't and would like to move it manually, follow these steps:
@@ -34,9 +34,9 @@ If there is `wp-config-local.php` file available in this directory then the envi
 **This is where you do theme development**. The theme folder includes Chisel starter theme with the following structure:
 
 - `dist` - production ready files are automatically generated here.
-- `Chisel` - various classes used to extend or add new functionality to your theme. Check out [WordPress development](/docs/development/wordpress/)
+- `Chisel` - various classes used to extend or add new functionality to your theme. Check out [WordPress development](/docs/development/wordpress)
 - `src` - if you've chosen to have the `src` folder inside your theme folder, it will appear here
-- `templates` - Twig templates, check out [Twig documentation](/docs/development/twig/)
+- `templates` - Twig templates, check out [Twig documentation](/docs/development/twig)
 - `functions.php` - Chisel starter theme files
 - `index.php`
 - etc.
@@ -56,7 +56,7 @@ Chisel uses various configurations files. Usually, it's not necessary to touch t
 - `.stylelintignore` - [stylelint](http://stylelint.io/) ignore file
 - `.stylintrc.yml` - [stylelint](http://stylelint.io/) configuration file to achieve consistent CSS coding style (you can update it to your preference)
 - `.yo-rc.json` - [Yeoman](http://yeoman.io/) generator configuration file
-- `dev-vhost.conf` - automatically generated virtual host configuration (not needed if you use [wildcard virtual hosts](/docs/installation/wildcard-virtual-hosts/))
+- `dev-vhost.conf` - automatically generated virtual host configuration (not needed if you use [wildcard virtual hosts](/docs/installation/wildcard-virtual-hosts))
 - `gulpfile.js` - Gulp configuration file
 - `package.json` - project metadata and dependencies
 - `package-lock.json` - [npm lock file](https://docs.npmjs.com/files/package-locks), if you use npm

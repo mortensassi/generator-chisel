@@ -15,9 +15,10 @@ posts.forEach((post) => {
   const fileToWrite = `${path.join('./content', path.relative('/', file))}.md`;
   console.log(path.relative('/', file));
   execSync(`mkdir -p '${path.dirname(fileToWrite)}'`);
-  const content = post.content.rendered
-    .split('http://getchisel.test/')
-    .join('/');
+  const content = post.content.rendered.replace(
+    /http:\/\/getchisel.test(\/[^\s)]*)\//g,
+    '$1',
+  );
   fs.writeFileSync(
     fileToWrite,
     `---

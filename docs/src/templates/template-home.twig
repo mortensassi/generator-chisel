@@ -1,0 +1,9 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+  {% set blocks = post.get_field('blocks') %}
+  {% set letters = ['A', 'B', 'C'] %}
+  {% for block_item in blocks %}
+    {% include 'components/block.twig' %}
+  {% endfor %}
+{% endblock %}

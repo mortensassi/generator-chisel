@@ -3,7 +3,7 @@ title: Project setup
 order: 40
 ---
 
-Once you [installed Chisel](/docs/installation/), you can setup a project by running the following command on the command line:
+Once you [installed Chisel](/docs/installation), you can setup a project by running the following command on the command line:
 
 ```bash
 yo chisel
@@ -11,7 +11,7 @@ yo chisel
 
 Chisel asks you a few questions about your project and allows you to choose the project type. You can set up two different types of project: 
 
-* [WordPress Website Setup](/docs/setup/wordpress/)
-* [Front-end Templates Setup](/docs/setup/frontend/)
+* [WordPress Website Setup](/docs/setup/wordpress)
+* [Front-end Templates Setup](/docs/setup/frontend)
 
 Chisel then creates all required files for your project and installs neccessary software.

@@ -3,7 +3,7 @@ title: Tasks
 order: 110
 ---
 
-Once you [setup project](/docs/setup/) and get familiar with [project structure](/docs/structure/), it's time to start development. To do so, use the following tasks on your **command line**.
+Once you [setup project](/docs/setup) and get familiar with [project structure](/docs/structure), it's time to start development. To do so, use the following tasks on your **command line**.
 
 ## `npm run dev`
 This is a basic command to work with Chisel. It starts a development server with your project at `localhost:3000` and opens the address in your browser.

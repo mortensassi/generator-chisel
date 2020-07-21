@@ -38,7 +38,7 @@ Select optional plugins which should be installed from the list and wait until i
 *Note: To speedup installation process we recommend using [Yarn](https://yarnpkg.com/en/). Chisel will automatically detect it and run if possible. Otherwise it falls back to default NPM install*
 
 ## 3. Set up virtual host (optional)
-We recommend setting up [wildcard virtual hosts](/docs/installation/wildcard-virtual-hosts/) so your project domain works out of box.
+We recommend setting up [wildcard virtual hosts](/docs/installation/wildcard-virtual-hosts) so your project domain works out of box.
 
 If you haven’t set them up, you will have to add project domain to your `hosts` file
 

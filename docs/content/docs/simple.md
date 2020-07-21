@@ -4,7 +4,7 @@ order: 200
 ---
 
 ## What is Chisel?
-Chisel is like an **automatic coffee machine** which can produce different types of coffees. When you get Chisel, it means when you [install it on your computer](/docs/installation/), you can set up different types of projects with it, namely WordPress projects or front-end templates projects.
+Chisel is like an **automatic coffee machine** which can produce different types of coffees. When you get Chisel, it means when you [install it on your computer](/docs/installation), you can set up different types of projects with it, namely WordPress projects or front-end templates projects.
 
 ## How do I work with Chisel?
 Chisel doesn't have any shiny buttons to press, it is controlled from the [command line](https://webdesign.tutsplus.com/articles/the-command-line-for-web-design-introduction--cms-23493). The basic command is `yo chisel`. You typically run it in an empty folder where you want to set up your new project.
@@ -24,10 +24,10 @@ No, when you got your espresso or latte, you cannot put it back to the machine t
 Similarly, once Chisel sets up the project, you cannot change the project type. You could do some customization to the project by adding new tools to it or customizing the existing ones.
 
 ## I've got a Chisel project from a developer and I'd like to continue working on that. What should I do?
-1. First, [install Chisel](/docs/installation/)
+1. First, [install Chisel](/docs/installation)
 2. Next, set up a project:
-  - [WordPress project](/docs/setup/wordpress/) - scroll down to *Setting up an existing project*
-  - [Front-end templates](/docs/setup/frontend/) - scroll down to *Setting up an existing project*
+  - [WordPress project](/docs/setup/wordpress) - scroll down to *Setting up an existing project*
+  - [Front-end templates](/docs/setup/frontend) - scroll down to *Setting up an existing project*
 3. If you have troubles to install Chisel or to set up a project, [submit an issue](https://github.com/xfiveco/generator-chisel/issues) at GitHub with a label `question` or write us to [chisel@xfive.co](mailto:chisel@xfive.co). We are happy to help.
 
 ## I've got a Chisel project from a developer, but I'm fan of good old CSS and HTML.
@@ -35,7 +35,7 @@ The good old HTML & CSS, who wouldn't like those, right? However, we recommend t
 
 If you still would like to work with CSS and HTML directly, they are stored in the `dist` folder. Chisel automatically creates unminified CSS, the file name looks somewhat like `main-ec2b29e0f7.full.css`. Unfortunately, there is no reasonable way how to work with JavaScript files in the `dist` folder directly.
 
-**Beware, once you edit HTML or CSS in the `dist` folder directly, you or other developers shouldn't use [standard project workflow and tasks](/docs/development/tasks/) anymore.** The standard development workflow overrides content of `dist` folder so you could lose your changes.
+**Beware, once you edit HTML or CSS in the `dist` folder directly, you or other developers shouldn't use [standard project workflow and tasks](/docs/development/tasks) anymore.** The standard development workflow overrides content of `dist` folder so you could lose your changes.
 
 For the full overview and comparison of old school vs. modern development workflow check out [this article](https://www.xfive.co/blog/craft-perfect-websites-chisel/).
 

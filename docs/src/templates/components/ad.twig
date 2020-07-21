@@ -1,0 +1,15 @@
+<div class="o-wrapper o-wrapper--small u-sp-top u-sp--xlarge">
+  <div class="c-sep c-sep--small u-sp-top u-sp-bottom u-sp--xlarge"></div>
+  <div class="c-ad">
+    <h2 class="c-ad__title">{{ options.xfive_ad.title }}</h2>
+    <h3 class="c-ad__subtitle">{{ options.xfive_ad.subtitle }}</h3>
+    <div class="c-sep c-sep--solid c-sep--small u-sp-top u-sp-bottom u-sp--normal"></div>
+    {{ options.xfive_ad.description }}
+    {% set link = options.xfive_ad.link %}
+    <a class="c-ad__link" href="{{link.url}}" target="{{link.target}}">{{link.title}}</a>
+    <span class="c-ad__dot"></span>
+    <span class="c-ad__dot c-ad__dot--tr"></span>
+    <span class="c-ad__dot c-ad__dot--bl"></span>
+    <span class="c-ad__dot c-ad__dot--br"></span>
+  </div>
+</div>

@@ -3,6 +3,4 @@
   Author: Xfive
  */
 
-import greet from './modules/greeting';
-
-greet('World');
+// TODO: prism
