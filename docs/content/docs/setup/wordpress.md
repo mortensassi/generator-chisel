@@ -1,13 +1,15 @@
 ---
 title: WordPress Website Setup
+excerpt: How to setup a WordPress website with Chisel
 order: 50
 ---
 
 ## 1. Create project directory
-Create new project directory and change your working directory to it. You can use the following command on the command line:
+Create new project directory and change your working directory to it. You can use the following commands on the command line:
 
 ```bash
-mkdir project-name &amp;&amp; cd $_
+mkdir project-name 
+cd project-name
 ```
 
 ## 2. Run Chisel
@@ -22,7 +24,7 @@ Insert project name (you can use the default one based on the working directory 
 Then continue with WordPress setup as follows:
 
 - *Enter title for the new site*: title of your WordPress website
-- *Enter URL*: the URL at which your WordPress project runs, currently Chisel only works with the default value
+- *Enter URL*: the URL at which your WordPress project runs, currently Chisel only works with the default value (see [#189](https://github.com/xfiveco/generator-chisel/issues/189))
 - *Enter admin user*: WordPress admin user, a different name than `admin` is suggested to increase security
 - *Enter admin password*: WordPress admin user password
 - *Enter admin email*:

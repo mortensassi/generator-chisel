@@ -1,5 +1,6 @@
 ---
 title: Project setup
+excerpt: Learn how to setup Chisel project from the command line
 order: 40
 ---
 

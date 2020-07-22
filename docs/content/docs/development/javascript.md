@@ -1,5 +1,6 @@
 ---
 title: JavaScript
+excerpt: Chisel supports writing modern JavaScript with ES6
 order: 160
 ---
 

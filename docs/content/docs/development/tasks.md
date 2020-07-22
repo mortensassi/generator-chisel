@@ -1,5 +1,6 @@
 ---
 title: Tasks
+excerpt: Development tasks are commands you use on the command line to start development.
 order: 110
 ---
 
@@ -22,16 +23,42 @@ If you'd like change Browsersync configuration, you can do so in `gulp/tasks/ser
 
 ```js
 var browserSyncConfig = {
-  server: &#039;./&#039;,
+  server: './',
   ghostMode: false,
   online: true,
-  notify: false, // Don&#039;t show any notifications in the browser
+  notify: false, // Don't show any notifications in the browser
   open: false // Stop the browser from automatically opening
 }
 ```
 
 ### Proxy on WordPress projects
 Browsersync proxies to your WordPress instance running at `project-name.test`, it means that when you look at the project at `localhost:3000`, it loads the project from `project-name.test`.
+
+You can configure custom `proxyTarget` in `.yo-rc.json`:
+```js
+{
+  "generator-chisel": {
+    "config": {
+      "name": "...",
+      "author": "...",
+      ...
+      "proxyTarget": "http://some-target:8888/"
+    }
+  }
+}
+```
+
+If you don't want to commit your `proxyTarget` to repository, you can also create file `.yo-rc-local.json` with similar content:
+
+```js
+{
+  "generator-chisel": {
+    "config": {
+      "proxyTarget": "http://some-target:8888/"
+    }
+  }
+}
+```
 
 ## `npm run build`
 This command is used to create production-ready files in the `dist` folder. These files are:

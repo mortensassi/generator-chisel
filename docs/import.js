@@ -25,6 +25,7 @@ posts.forEach((post) => {
     fileToWrite,
     `---
 title: ${post.title.rendered}
+excerpt: ${post.excerpt.rendered}
 order: ${post.menu_order}
 ---
 
