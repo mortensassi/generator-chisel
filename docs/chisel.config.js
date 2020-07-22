@@ -47,6 +47,7 @@ module.exports = {
     buildFormat: 'minify',
     functions: {
       async sidebar({ context: { post }, functions: { getPosts } }) {
+        if (!post.id().startsWith('docs')) return '';
         const start = (await getPosts({ id: 'docs' }))[0];
         const children = await getPosts(
           { parent: start.id() },
