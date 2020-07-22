@@ -44,6 +44,7 @@ module.exports = {
   staticFrontend: {
     serveDist: true,
     skipHtmlExtension: true,
+    buildFormat: 'minify',
     functions: {
       async sidebar({ context: { post }, functions: { getPosts } }) {
         const start = (await getPosts({ id: 'docs' }))[0];
