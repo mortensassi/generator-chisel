@@ -1,103 +1,87 @@
 const globby = require('globby');
 const fs = require('fs-extra');
-const path = require('path');
 const prettier = require('prettier');
-const chisel = require('../bin/chisel');
-
-const binPath = path.resolve(__dirname, '../bin/chisel.js');
 
 global.chiselTestHelpers.tmpCurrentDirectory();
 
-const defaultAnswers = (additionalFeatures = []) => (data) => [
+const defaultAnswers = (additionalFeatures = []) => [
   null,
-  () => ({
-    ...data,
+  {
     app: {
       name: 'FrontEnd',
       author: 'Xfive Tester',
       projectType: 'fe',
       browsers: ['modern', 'edge'],
     },
-  }),
-  () => ({
-    ...data,
+  },
+  {
     fe: {
       additionalFeatures,
     },
-  }),
+  },
 ];
 
 describe('Static', () => {
   test('Generates all expected files and config', async () => {
     global.chiselTestHelpers.mockPromptAnswers(defaultAnswers());
 
-    await chisel([
-      process.argv[0],
-      binPath,
-      'create',
-      '--skip-dependencies-install',
-      '--skip-format-and-build',
-    ]);
+    await global.chiselTestHelpers.generateProjectWithAnswers(
+      ['create', '--skip-dependencies-install', '--skip-format-and-build'],
+      defaultAnswers(),
+    );
 
     const files = (await globby('./', { dot: true })).sort();
 
     expect(files).toMatchSnapshot();
     expect(
-      prettier.format(await fs.readFile('./chisel.config.js', 'utf8'), {
+      prettier.format(fs.readFileSync('./chisel.config.js', 'utf8'), {
         parser: 'babel',
       }),
     ).toMatchSnapshot();
   });
 
   test('Generates all expected files and config with serveDist', async () => {
-    global.chiselTestHelpers.mockPromptAnswers(defaultAnswers(['serveDist']));
-
-    await chisel([
-      process.argv[0],
-      binPath,
-      'create',
-      '--skip-dependencies-install',
-      '--skip-fe-add-index',
-      '--skip-format-and-build',
-    ]);
+    await global.chiselTestHelpers.generateProjectWithAnswers(
+      [
+        'create',
+        '--skip-dependencies-install',
+        '--skip-fe-add-index',
+        '--skip-format-and-build',
+      ],
+      defaultAnswers(['serveDist']),
+    );
 
     const files = (await globby('./', { dot: true })).sort();
 
     expect(files).toMatchSnapshot();
     expect(
-      prettier.format(await fs.readFile('./chisel.config.js', 'utf8'), {
+      prettier.format(fs.readFileSync('./chisel.config.js', 'utf8'), {
         parser: 'babel',
       }),
     ).toMatchSnapshot();
   });
 
   test('Generates all expected files and config with skipHtmlExtension', async () => {
-    global.chiselTestHelpers.mockPromptAnswers(
+    await global.chiselTestHelpers.generateProjectWithAnswers(
+      ['create', '--skip-dependencies-install', '--skip-format-and-build'],
       defaultAnswers(['skipHtmlExtension']),
     );
-
-    await chisel([
-      process.argv[0],
-      binPath,
-      'create',
-      '--skip-dependencies-install',
-      '--skip-format-and-build',
-    ]);
 
     const files = (await globby('./', { dot: true })).sort();
 
     expect(files).toMatchSnapshot();
     expect(
-      prettier.format(await fs.readFile('./chisel.config.js', 'utf8'), {
+      prettier.format(fs.readFileSync('./chisel.config.js', 'utf8'), {
         parser: 'babel',
       }),
     ).toMatchSnapshot();
   });
 
   test('Generate and build FE Project', async () => {
-    global.chiselTestHelpers.mockPromptAnswers(defaultAnswers());
-
-    await chisel([process.argv[0], binPath, 'create']);
+    await global.chiselTestHelpers.generateProjectWithAnswers(
+      ['create'],
+      defaultAnswers(),
+    );
 
     // bug: hash of the css is depends on path of
     const files = (
@@ -109,6 +93,6 @@ describe('Static', () => {
       );
 
     expect(files).toMatchSnapshot();
-    expect(await fs.readFile('./chisel.config.js', 'utf8')).toMatchSnapshot();
+    expect(fs.readFileSync('./chisel.config.js', 'utf8')).toMatchSnapshot();
   });
 });
