@@ -21,7 +21,7 @@ const defaultAnswers = (additionalFeatures = []) => [
   },
 ];
 
-describe('Static', () => {
+describe('Generator Static', () => {
   test('Generates all expected files and config', async () => {
     global.chiselTestHelpers.mockPromptAnswers(defaultAnswers());
 

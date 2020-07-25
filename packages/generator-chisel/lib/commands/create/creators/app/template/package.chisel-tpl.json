@@ -37,6 +37,10 @@
       "pre-commit": "lint-staged"
     }
   },
+  <%= process.env.CHISEL_TEST_PNP ? `
+  "installConfig": {
+    "pnp": true
+  },` : '' %>
   "lint-staged": {
     "*.{js,scss}": "chisel-scripts lint"
   }

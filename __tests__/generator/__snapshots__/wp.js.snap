@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WordPress Generates all expected files 1`] = `
+exports[`Generator WordPress Generates all expected files 1`] = `
 Array [
   ".browserslistrc",
   ".editorconfig",
@@ -104,7 +104,7 @@ Array [
 ]
 `;
 
-exports[`WordPress Generates all expected files and downloads WP 1`] = `
+exports[`Generator WordPress Generates all expected files and downloads WP 1`] = `
 Array [
   ".browserslistrc",
   ".editorconfig",

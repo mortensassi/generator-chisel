@@ -3,6 +3,8 @@
 const fs = require('fs-extra');
 const path = require('path');
 const { merge } = require('lodash');
+const globby = require('globby');
+const Module = require('module');
 
 process.env.CHISEL_TEST = true;
 
@@ -64,6 +66,44 @@ global.chiselTestHelpers = {
 
     if (unmockAnswers) {
       unmockAnswers();
+    }
+  },
+
+  async runChiselScript(args) {
+    const generator = path.dirname(__dirname);
+    const paths = Module._nodeModulePaths(process.cwd()).filter((p) =>
+      p.startsWith(generator),
+    );
+
+    for (const p of paths) {
+      const fibers = path.join(p, 'fibers');
+      if (await fs.exists(fibers)) {
+        await fs.remove(fibers);
+      }
+    }
+
+    await require('chisel-scripts/bin/chisel-scripts')(args);
+  },
+
+  async expectFilesToMatchSnapshot(
+    filesPaths = ['./', '!node_modules', '!yarn.lock'],
+  ) {
+    // bug: hash of the css is depends on path of
+    const files = (await globby(filesPaths, { dot: true }))
+      .sort()
+      .map((val) =>
+        val.replace(/(?<=styles\/main\.)[a-z0-9]+(?=\.)/, '--HASH--'),
+      );
+
+    expect(files).toMatchSnapshot();
+  },
+
+  fixHashesInConsoleMock(consoleMock) {
+    if (consoleMock.mock.calls[1] && consoleMock.mock.calls[1][0]) {
+      consoleMock.mock.calls[1][0] = consoleMock.mock.calls[1][0].replace(
+        /(?<=styles\/main\.)[a-z0-9]+(?=\.)/g,
+        '--HASH--',
+      );
     }
   },
 };

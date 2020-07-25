@@ -40,7 +40,7 @@ async function testWithBrowsers(browsers) {
   expect(fs.readFileSync('./.browserslistrc', 'utf8')).toMatchSnapshot();
 }
 
-describe('.browserslist generation', () => {
+describe('Generator: .browserslist generation', () => {
   test('should generate empty', async () => {
     await testWithBrowsers([]);
   });

@@ -24,7 +24,7 @@ const defaultAnswers = [
   { wpPlugins: { plugins: [] } },
 ];
 
-describe('WordPress', () => {
+describe('Generator WordPress', () => {
   test('Generates all expected files', async () => {
     await global.chiselTestHelpers.generateProjectWithAnswers(
       [

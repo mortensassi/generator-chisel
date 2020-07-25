@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Static Generate and build FE Project 1`] = `
+exports[`Generator Static Generate and build FE Project 1`] = `
 Array [
   ".browserslistrc",
   ".editorconfig",
@@ -68,7 +68,7 @@ Array [
 ]
 `;
 
-exports[`Static Generate and build FE Project 2`] = `
+exports[`Generator Static Generate and build FE Project 2`] = `
 "const creatorData = {
   chiselVersion: '1.0.0-alpha.9',
   app: {
@@ -118,7 +118,7 @@ module.exports = {
 "
 `;
 
-exports[`Static Generates all expected files and config 1`] = `
+exports[`Generator Static Generates all expected files and config 1`] = `
 Array [
   ".browserslistrc",
   ".editorconfig",
@@ -180,7 +180,7 @@ Array [
 ]
 `;
 
-exports[`Static Generates all expected files and config 2`] = `
+exports[`Generator Static Generates all expected files and config 2`] = `
 "const creatorData = {
   chiselVersion: \\"1.0.0-alpha.9\\",
   app: {
@@ -230,7 +230,7 @@ module.exports = {
 "
 `;
 
-exports[`Static Generates all expected files and config with serveDist 1`] = `
+exports[`Generator Static Generates all expected files and config with serveDist 1`] = `
 Array [
   ".browserslistrc",
   ".editorconfig",
@@ -291,7 +291,7 @@ Array [
 ]
 `;
 
-exports[`Static Generates all expected files and config with serveDist 2`] = `
+exports[`Generator Static Generates all expected files and config with serveDist 2`] = `
 "const creatorData = {
   chiselVersion: \\"1.0.0-alpha.9\\",
   app: {
@@ -341,7 +341,7 @@ module.exports = {
 "
 `;
 
-exports[`Static Generates all expected files and config with skipHtmlExtension 1`] = `
+exports[`Generator Static Generates all expected files and config with skipHtmlExtension 1`] = `
 Array [
   ".browserslistrc",
   ".editorconfig",
@@ -403,7 +403,7 @@ Array [
 ]
 `;
 
-exports[`Static Generates all expected files and config with skipHtmlExtension 2`] = `
+exports[`Generator Static Generates all expected files and config with skipHtmlExtension 2`] = `
 "const creatorData = {
   chiselVersion: \\"1.0.0-alpha.9\\",
   app: {
